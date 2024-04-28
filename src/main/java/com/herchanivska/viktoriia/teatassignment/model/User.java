@@ -8,9 +8,12 @@ import java.time.Instant;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @RequiredArgsConstructor
+@EqualsAndHashCode
+@ToString
 public class User {
+    Long id;
+
     @NotNull
     @Email
     private String email;
@@ -27,7 +30,7 @@ public class User {
 
     @NotNull
     @Past
-    private Instant birthDate;
+    private Instant birthDate; //field type could be changed due to application requirements
 
     private String address;
 
