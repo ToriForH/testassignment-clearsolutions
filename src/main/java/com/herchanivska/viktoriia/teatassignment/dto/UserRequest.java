@@ -1,19 +1,20 @@
-package com.herchanivska.viktoriia.teatassignment.model;
+package com.herchanivska.viktoriia.teatassignment.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.herchanivska.viktoriia.teatassignment.model.User;
 import jakarta.validation.constraints.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
-@EqualsAndHashCode
-@ToString
-public class User {
-    Long id;
-
+public class UserRequest {
     @NotNull
     @Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "Please provide valid email")
     private String email;
@@ -39,4 +40,8 @@ public class User {
     private String address;
 
     private String phoneNumber;
+
+    public User getUserEntity() {
+        return new User(null, email, firstName, lastName, birthDate, address, phoneNumber);
+    }
 }
