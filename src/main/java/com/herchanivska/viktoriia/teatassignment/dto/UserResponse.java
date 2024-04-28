@@ -1,6 +1,5 @@
 package com.herchanivska.viktoriia.teatassignment.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.herchanivska.viktoriia.teatassignment.model.User;
 import lombok.Value;
 

@@ -8,35 +8,35 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @AllArgsConstructor
-@RequiredArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode
 @ToString
 public class User {
     Long id;
 
-    @NotNull
-    @Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "Please provide valid email")
+    @NotNull(message = "Email can not be null")
+    @Pattern(regexp = "^[\\w.-]+@([\\w-]+\\.)+\\w{2,4}$", message = "Please provide valid email")
     private String email;
 
-    @NotNull
-    @NotBlank
+    @NotNull(message = "First name can not be null")
     @Pattern(regexp = "[A-Z][a-z]+(-[A-Z][a-z]+)?", message = "First name should start with capital letter " +
             "and be followed by lowercase letters. If there are second part on name it should be separated " +
             "by hyphen and also should start with capital letter and be followed by lowercase letters")
     private String firstName;
 
-    @NotNull
-    @NotBlank
-    @Pattern(regexp = "[A-Z][a-z]+(-[A-Z][a-z]+)?", message = "First name should start with capital letter " +
+    @NotNull(message = "Last name can not be null")
+    @Pattern(regexp = "[A-Z][a-z]+(-[A-Z][a-z]+)?", message = "Last name should start with capital letter " +
             "and be followed by lowercase letters. If there are second part on name it should be separated " +
             "by hyphen and also should start with capital letter and be followed by lowercase letters")
     private String lastName;
 
-    @NotNull
+    @NotNull(message = "Birth date can not be null")
     @Past(message = "Birth date should be before current date")
     private LocalDate birthDate; //field type could be changed due to application requirements
 
     private String address;
 
+    @Pattern(regexp = "\\d+", message = "Phone number should contain only digits")
+    @Size(min = 4, max = 13, message = "Phone number can not be less than 4 digits or more than 13 digits")
     private String phoneNumber;
 }
