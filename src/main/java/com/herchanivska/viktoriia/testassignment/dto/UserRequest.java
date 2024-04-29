@@ -1,6 +1,6 @@
-package com.herchanivska.viktoriia.teatassignment.dto;
+package com.herchanivska.viktoriia.testassignment.dto;
 
-import com.herchanivska.viktoriia.teatassignment.model.User;
+import com.herchanivska.viktoriia.testassignment.model.User;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,6 +1,6 @@
-package com.herchanivska.viktoriia.teatassignment.exception;
+package com.herchanivska.viktoriia.testassignment.exception;
 
-import com.herchanivska.viktoriia.teatassignment.dto.ExceptionResponse;
+import com.herchanivska.viktoriia.testassignment.dto.ExceptionResponse;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

@@ -1,10 +1,10 @@
-package com.herchanivska.viktoriia.teatassignment.controller;
+package com.herchanivska.viktoriia.testassignment.controller;
 
-import com.herchanivska.viktoriia.teatassignment.dto.SearchBirthDateRequest;
-import com.herchanivska.viktoriia.teatassignment.dto.UserRequest;
-import com.herchanivska.viktoriia.teatassignment.dto.UserResponse;
-import com.herchanivska.viktoriia.teatassignment.model.User;
-import com.herchanivska.viktoriia.teatassignment.service.UserService;
+import com.herchanivska.viktoriia.testassignment.dto.SearchBirthDateRequest;
+import com.herchanivska.viktoriia.testassignment.dto.UserRequest;
+import com.herchanivska.viktoriia.testassignment.dto.UserResponse;
+import com.herchanivska.viktoriia.testassignment.model.User;
+import com.herchanivska.viktoriia.testassignment.service.UserService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,7 +81,7 @@ public class UserController {
         if (toDelete == null) {
             throw new EntityNotFoundException("User with id " + userId + " not exist");
         }
-        userService.delete(toDelete);
+        userService.delete(userId);
         return ResponseEntity.ok().build();
     }
 

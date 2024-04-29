@@ -1,8 +1,7 @@
-package com.herchanivska.viktoriia.teatassignment.service.impl;
+package com.herchanivska.viktoriia.testassignment.service.impl;
 
-import com.herchanivska.viktoriia.teatassignment.model.User;
-import com.herchanivska.viktoriia.teatassignment.service.UserService;
-import jakarta.validation.Valid;
+import com.herchanivska.viktoriia.testassignment.model.User;
+import com.herchanivska.viktoriia.testassignment.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.beans.IntrospectionException;
@@ -25,7 +24,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User create(@Valid User user) {
+    public User create(User user) {
         user.setId(++idCount);
         users.add(user);
         return readById(user.getId());
@@ -45,16 +44,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User update(@Valid User user) {
+    public User update(User user) {
         User toUpdate = readById(user.getId());
         users.remove(toUpdate); //use remove and add instead of setters to make possible change User class fields without rewriting service method
         users.add(user);
-        return toUpdate;
+        return user;
     }
 
     @Override
-    public void delete(User user) {
-        User toDelete = readById(user.getId());
+    public void delete(long id) {
+        User toDelete = readById(id);
         users.remove(toDelete);
     }
 

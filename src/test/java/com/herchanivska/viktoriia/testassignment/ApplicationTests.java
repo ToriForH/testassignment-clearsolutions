@@ -1,4 +1,4 @@
-package com.herchanivska.viktoriia.teatassignment;
+package com.herchanivska.viktoriia.testassignment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

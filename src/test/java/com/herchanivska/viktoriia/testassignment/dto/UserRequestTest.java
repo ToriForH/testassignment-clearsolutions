@@ -1,4 +1,4 @@
-package com.herchanivska.viktoriia.teatassignment.dto;
+package com.herchanivska.viktoriia.testassignment.dto;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
