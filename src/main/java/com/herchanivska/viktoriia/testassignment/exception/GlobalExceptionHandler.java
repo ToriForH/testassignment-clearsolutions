@@ -22,13 +22,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity<?> handleIllegalArgumentException(EntityNotFoundException ex, WebRequest request) {
+    public ResponseEntity<?> handleIllegalArgumentException(IllegalArgumentException ex, WebRequest request) {
         ExceptionResponse body = getResponseBody(ex, request, 400);
         return super.handleExceptionInternal(ex, body, new HttpHeaders(), HttpStatusCode.valueOf(400), request);
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleOtherException(EntityNotFoundException ex, WebRequest request) {
+    public ResponseEntity<?> handleOtherException(Exception ex, WebRequest request) {
         ExceptionResponse body = getResponseBody(ex, request, 500);
         return super.handleExceptionInternal(ex, body, new HttpHeaders(), HttpStatusCode.valueOf(500), request);
     }
