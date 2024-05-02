@@ -46,8 +46,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public User update(User user) {
         User toUpdate = readById(user.getId());
+        int index = users.indexOf(toUpdate);
         users.remove(toUpdate); //use remove and add instead of setters to make possible change User class fields without rewriting service method
-        users.add(user);
+        users.add(index, user);
         return user;
     }
 
@@ -77,12 +78,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getAll() {
-        users.sort(new Comparator<User>() {
-            @Override
-            public int compare(User o1, User o2) {
-                return o1.getId().compareTo(o2.getId());
-            }
-        });
         return users;
     }
 }
